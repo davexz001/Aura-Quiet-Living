@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura — Quiet Living</title>
+  <meta name="description" content="Technology designed to disappear into your life. Warm materials, silent operation, natural forms." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── CURSOR ─────────────────────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ── LOADER ─────────────────────────────────────────────────── -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__brand">Aura</span>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo" id="navLogo">Aura</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#products" class="nav__link" data-scroll="products">Shop</a></li>
+      <li><a href="#about"    class="nav__link" data-scroll="about">About</a></li>
+      <li><a href="#journal"  class="nav__link" data-scroll="journal">Journal</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__cart" id="cartBtn" aria-label="Open cart">
+        Cart <span class="nav__cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#products" class="mobile-menu__link" data-scroll="products">Shop</a>
+    <a href="#about"    class="mobile-menu__link" data-scroll="about">About</a>
+    <a href="#journal"  class="mobile-menu__link" data-scroll="journal">Journal</a>
+    <button class="mobile-menu__cart" id="mobileCartBtn">Cart (<span id="mobileCartCount">0</span>)</button>
+  </div>
+
+  <!-- ── MAIN ───────────────────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- HOME VIEW -->
+    <div id="viewHome">
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero__bg">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
+               alt="Serene misty landscape" class="hero__img" />
+          <div class="hero__overlay"></div>
+          <div class="hero__grain"></div>
+        </div>
+        <div class="hero__content">
+          <span class="hero__badge reveal">Spring Collection 2025</span>
+          <h1 class="hero__title reveal reveal--delay-1">
+            Quiet <em>living.</em>
+          </h1>
+          <p class="hero__sub reveal reveal--delay-2">
+            Technology designed to disappear into your life.<br>
+            Warm materials, silent operation, natural forms.
+          </p>
+          <a href="#products" class="btn btn--light reveal reveal--delay-3" data-scroll="products">
+            View Collection
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="hero__scroll">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- MARQUEE STRIP -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Quiet Living</span><span>·</span>
+          <span>Natural Materials</span><span>·</span>
+          <span>Silent Technology</span><span>·</span>
+          <span>Spring 2025</span><span>·</span>
+          <span>Quiet Living</span><span>·</span>
+          <span>Natural Materials</span><span>·</span>
+          <span>Silent Technology</span><span>·</span>
+          <span>Spring 2025</span><span>·</span>
+          <span>Quiet Living</span><span>·</span>
+          <span>Natural Materials</span><span>·</span>
+          <span>Silent Technology</span><span>·</span>
+          <span>Spring 2025</span><span>·</span>
+        </div>
+      </div>
+
+      <!-- PRODUCTS -->
+      <section class="products" id="products">
+        <div class="container">
+          <div class="products__header">
+            <h2 class="section-title reveal">The Collection</h2>
+            <div class="products__filters reveal">
+              <button class="filter active" data-filter="all">All</button>
+              <button class="filter" data-filter="Audio">Audio</button>
+              <button class="filter" data-filter="Wearable">Wearable</button>
+              <button class="filter" data-filter="Mobile">Mobile</button>
+              <button class="filter" data-filter="Home">Home</button>
+            </div>
+          </div>
+          <div class="products__grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about">
+        <div class="about__intro container">
+          <div class="about__intro-left reveal">
+            <h2 class="section-title">Born from the earth,<br>built for the mind.</h2>
+          </div>
+          <div class="about__intro-right reveal reveal--delay-1">
+            <p>Aura was founded on a simple but radical premise: technology should not feel like technology. It should feel like a stone smoothed by a river, or a page turned in a book.</p>
+            <p>In an age of infinite distraction, we design objects that respect your silence. We use materials that age gracefully—sandstone, untreated aluminum, and organic cotton.</p>
+            <img src="https://images.pexels.com/photos/6583355/pexels-photo-6583355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                 alt="Aura Design Studio" class="about__studio-img" />
+            <span class="about__caption">The Aura Studio, Kyoto</span>
+          </div>
+        </div>
+        <div class="about__blocks">
+          <div class="about__block">
+            <div class="about__block-img">
+              <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=1200"
+                   alt="Natural Stone Texture" />
+            </div>
+            <div class="about__block-text about__block-text--sand">
+              <span class="about__label reveal">Materiality</span>
+              <h3 class="reveal">Materials that age<br>with grace.</h3>
+              <p class="reveal reveal--delay-1">We reject the disposable. Every Aura product is crafted from sandstone, unpolished aluminum, and organic fabrics that develop a unique patina over time.</p>
+            </div>
+          </div>
+          <div class="about__block about__block--reverse">
+            <div class="about__block-text about__block-text--dark">
+              <span class="about__label reveal">The Ecosystem</span>
+              <h3 class="reveal">Silence by default.</h3>
+              <p class="reveal reveal--delay-1">Our devices respect your attention. No blinking lights, no intrusive notifications. Just calm utility when you need it, and a beautiful object when you don't.</p>
+            </div>
+            <div class="about__block-img">
+              <img src="https://images.pexels.com/photos/6801917/pexels-photo-6801917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                   alt="Quiet living" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNAL -->
+      <section class="journal" id="journal">
+        <div class="container">
+          <div class="journal__header reveal">
+            <span class="about__label">Editorial</span>
+            <h2 class="section-title">The Journal</h2>
+          </div>
+          <div class="journal__grid" id="journalGrid"></div>
+        </div>
+      </section>
+
+    </div><!-- /viewHome -->
+
+    <!-- PRODUCT DETAIL VIEW -->
+    <div id="viewProduct" class="view view--hidden"></div>
+
+    <!-- JOURNAL DETAIL VIEW -->
+    <div id="viewJournal" class="view view--hidden"></div>
+
+    <!-- CHECKOUT VIEW -->
+    <div id="viewCheckout" class="view view--hidden"></div>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <h4 class="footer__logo">Aura</h4>
+        <p>Designing technology that feels as natural as the world around it.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#products" data-scroll="products">All Products</a></li>
+          <li><a href="#products" data-scroll="products">New Arrivals</a></li>
+          <li><a href="#products" data-scroll="products">Audio</a></li>
+          <li><a href="#products" data-scroll="products">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about" data-scroll="about">Our Story</a></li>
+          <li><a href="#about" data-scroll="about">Sustainability</a></li>
+          <li><a href="#journal" data-scroll="journal">Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer__newsletter">
+        <h5>Newsletter</h5>
+        <div class="newsletter__form">
+          <input type="email" id="newsletterEmail" placeholder="your@email.com" />
+          <button id="newsletterBtn">Subscribe</button>
+        </div>
+        <p class="newsletter__status" id="newsletterStatus"></p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© 2025 Aura. All rights reserved.</p>
+      <p>Crafted with intention.</p>
+    </div>
+  </footer>
+
+  <!-- ── CART DRAWER ────────────────────────────────────────────── -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart" id="cart">
+    <div class="cart__header">
+      <h2>Your Cart (<span id="cartItemCount">0</span>)</h2>
+      <button class="cart__close" id="cartClose" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart__items" id="cartItems">
+      <div class="cart__empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <p>Your cart is empty.</p>
+      </div>
+    </div>
+    <div class="cart__footer">
+      <div class="cart__subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0</span>
+      </div>
+      <p class="cart__note">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn--dark btn--full" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
